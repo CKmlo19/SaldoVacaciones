@@ -1,0 +1,34 @@
+﻿@model List<EmpleadoModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Lista Empleados</h1>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-bordered" bgcolor="white" width="700">
+            <thead>
+                <tr bgcolor="grey">
+                    <th>Nombre</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) // c# en html
+                {// se crea una nueva fila
+                    <tr>
+                        <!-- Se inserta los datos del modelo-->
+                        <td>@item.Nombre</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Empleado" class="btn btn-primary btn-sm">Editar</a>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <a asp-action="Insertar" asp-controller="Empleado" class="btn btn-success">Insertar</a>
+    </div>
+</div>
