@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using NuGet.DependencyResolver;
 
 
 namespace SaldoVacaciones.Datos
@@ -94,7 +95,7 @@ namespace SaldoVacaciones.Datos
             {
                 conexion.Open();
                 // el procedure de listar
-                SqlCommand cmd = new SqlCommand("dbo.Obtener", conexion);
+                SqlCommand cmd = new SqlCommand("dbo.ObtenerEmpleado", conexion);
                 cmd.Parameters.AddWithValue("OutResultCode", 0); // se le coloca un 0 en el outresultcode
                 cmd.Parameters.AddWithValue("inNombre", nombre);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -114,6 +115,111 @@ namespace SaldoVacaciones.Datos
                 }
             }
             return oEmpleado;
+        }
+        public bool Insertar(EmpleadoModel oEmpleado) {
+            bool resultado;
+
+            try
+            {
+                var cn = new Conexion();
+
+                // abre la conexion
+                using (var conexion = new SqlConnection(cn.getCadenaSQL()))
+                {
+                    conexion.Open();
+                    // el procedure de listar
+                    SqlCommand cmd = new SqlCommand("dbo.InsertarEmpleado", conexion);
+                    cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
+                    cmd.Parameters.AddWithValue("inValorDocumentoIdentidad", oEmpleado.ValorDocumentoIdentidad);
+                    cmd.Parameters.AddWithValue("inIdPuesto", oEmpleado.IdPuesto);
+                    cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    // Registrar el script en la página para que se ejecute en el lado del cliente
+                }
+                resultado = true;
+
+
+            }
+            catch(Exception e) {
+                resultado = false;
+
+            }
+
+
+            return resultado;
+        
+        }
+
+        public bool Editar(EmpleadoModel oEmpleado)
+        {
+            bool resultado;
+
+            try
+            {
+                var cn = new Conexion();
+
+                // abre la conexion
+                using (var conexion = new SqlConnection(cn.getCadenaSQL()))
+                {
+                    conexion.Open();
+                    // el procedure de listar
+                    SqlCommand cmd = new SqlCommand("dbo.InsertarEmpleado", conexion);
+                    cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
+                    cmd.Parameters.AddWithValue("inValorDocumentoIdentidad", oEmpleado.ValorDocumentoIdentidad);
+                    cmd.Parameters.AddWithValue("inIdPuesto", oEmpleado.IdPuesto);
+                    cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    // Registrar el script en la página para que se ejecute en el lado del cliente
+                }
+                resultado = true;
+
+
+            }
+            catch (Exception e)
+            {
+                resultado = false;
+
+            }
+
+
+            return resultado;
+
+        }
+        public bool Eliminar(EmpleadoModel oEmpleado)
+        {
+            bool resultado;
+
+            try
+            {
+                var cn = new Conexion();
+
+                // abre la conexion
+                using (var conexion = new SqlConnection(cn.getCadenaSQL()))
+                {
+                    conexion.Open();
+                    // el procedure de listar
+                    SqlCommand cmd = new SqlCommand("dbo.InsertarEmpleado", conexion);
+                    cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
+                    cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    // Registrar el script en la página para que se ejecute en el lado del cliente
+                }
+                resultado = true;
+
+
+            }
+            catch (Exception e)
+            {
+                resultado = false;
+
+            }
+
+
+            return resultado;
+
         }
 
 
