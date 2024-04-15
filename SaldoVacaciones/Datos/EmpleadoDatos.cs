@@ -168,6 +168,7 @@ namespace SaldoVacaciones.Datos
                     conexion.Open();
                     // el procedure de listar
                     SqlCommand cmd = new SqlCommand("dbo.ModificarEmpleado", conexion);
+                    cmd.Parameters.AddWithValue("inId", oEmpleado.Id);
                     cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
                     cmd.Parameters.AddWithValue("inNombrePuesto", oEmpleado.NombrePuesto);
                     cmd.Parameters.AddWithValue("inValorDocumentoIdentidad", oEmpleado.ValorDocumentoIdentidad);
