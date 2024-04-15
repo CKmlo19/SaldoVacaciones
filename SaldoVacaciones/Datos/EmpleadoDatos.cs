@@ -4,6 +4,7 @@ using System.Data;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using NuGet.DependencyResolver;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Razor.Language.CodeGeneration;
 
 
 namespace SaldoVacaciones.Datos
@@ -41,6 +42,7 @@ namespace SaldoVacaciones.Datos
                 cmd.Parameters.AddWithValue("inCedula", cedula);
                 cmd.Parameters.AddWithValue("inNombre", nombre); 
                 cmd.CommandType = CommandType.StoredProcedure;
+                int contador = 0;
                 using (var dr = cmd.ExecuteReader()) // este se utiliza cuando se retorna una gran cantidad de datos, por ejemplo la tabla completa
                 {
                     // hace una lectura del procedimiento almacenado
@@ -50,7 +52,8 @@ namespace SaldoVacaciones.Datos
                         {
                             // tecnicamente hace un select, es por eso que se lee cada registro uno a uno que ya esta ordenado
                             Id = (int)Convert.ToInt64(dr["Id"]),
-                            IdPuesto = (int)Convert.ToInt64(dr["Id"]),
+                            NombrePuesto = dr["NombrePuesto"].ToString(),
+                            IdPuesto = (int)Convert.ToInt64(dr["IdPuesto"]),
                             ValorDocumentoIdentidad = dr["ValorDocumentoIdentidad"].ToString(),
                             Nombre = dr["Nombre"].ToString(),
                             FechaContratacion = (DateTime)dr["FechaContratacion"],
@@ -60,6 +63,8 @@ namespace SaldoVacaciones.Datos
                     }
                 }
             }
+
+
             return oLista;
         }
 
