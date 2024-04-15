@@ -104,5 +104,19 @@ namespace SaldoVacaciones.Controllers
             }
         }
 
+        public IActionResult Consultar(EmpleadoModel oEmpleado)
+        {
+            var resultado = _EmpleadoDatos.Eliminar(oEmpleado.ValorDocumentoIdentidad);
+            if (resultado)
+            {
+                return RedirectToAction("Listar");
+            }
+            else
+            {
+                return View(); // sino se queda en el mismo formulario
+
+            }
+        }
+
     }
 }
