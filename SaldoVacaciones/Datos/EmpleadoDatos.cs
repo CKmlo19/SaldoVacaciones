@@ -3,13 +3,14 @@ using System.Data.SqlClient;
 using System.Data;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using NuGet.DependencyResolver;
+using System.Text.RegularExpressions;
 
 
 namespace SaldoVacaciones.Datos
 {
     public class EmpleadoDatos
     {
-        public List<EmpleadoModel> Listar()
+        public List<EmpleadoModel> Listar(string codigo)
         {
             var oLista = new List<EmpleadoModel>();
 
@@ -22,11 +23,24 @@ namespace SaldoVacaciones.Datos
                 // el procedure de listar
                 SqlCommand cmd = new SqlCommand("dbo.ListarEmpleado", conexion);
                 cmd.Parameters.AddWithValue("OutResultCode", 0); // se le coloca un 0 en el outresultcode
-                
+                int num = 0;
+                string nombre = "";
+                string cedula = "";
+                if (string.IsNullOrEmpty(codigo)) { // si filtro esta vacio se lista todo
+                    num = 3;
+                }
+                else if (ContieneNumeros(codigo)) { // si contiene numeros entonces filtra por id dado
+                    num = 0;
+                    cedula = codigo;
+                }
+                else if (ContieneLetrasYEspacios(codigo)) { // si contiene solo letras y el espacio entonces filtra por nombre
+                    num = 1;
+                    nombre = codigo;
+                }
+                cmd.Parameters.AddWithValue("inCodigo", num);
+                cmd.Parameters.AddWithValue("inCedula", cedula);
+                cmd.Parameters.AddWithValue("inNombre", nombre); 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("inCodigo", 3);
-                cmd.Parameters.AddWithValue("inCedula", "123456789");
-                cmd.Parameters.AddWithValue("inNombre", "PEPE");
                 using (var dr = cmd.ExecuteReader()) // este se utiliza cuando se retorna una gran cantidad de datos, por ejemplo la tabla completa
                 {
                     // hace una lectura del procedimiento almacenado
@@ -39,7 +53,7 @@ namespace SaldoVacaciones.Datos
                             IdPuesto = (int)Convert.ToInt64(dr["Id"]),
                             ValorDocumentoIdentidad = dr["ValorDocumentoIdentidad"].ToString(),
                             Nombre = dr["Nombre"].ToString(),
-                            FechaContratacion =(DateTime)dr["FechaContratacion"],
+                            FechaContratacion = (DateTime)dr["FechaContratacion"],
                             SaldoVacaciones = (short)(dr["SaldoVacaciones"]),
                             EsActivo = (bool)(dr["EsActivo"]),
                         });
@@ -48,43 +62,32 @@ namespace SaldoVacaciones.Datos
             }
             return oLista;
         }
-        /*
-        public int Insertar(EmpleadoModel oEmpleado)
+
+        public bool ContieneNumeros(string cadena)
         {
-            int resultado;
+            // Patrón de expresión regular para verificar si la cadena contiene al menos un dígito
+            string patron = @"^\d+$"; ;
 
-            try
-            {
+            // Creamos un objeto Regex con el patrón especificado
+            Regex regex = new Regex(patron);
 
-
-                var cn = new Conexion();
-
-                // abre la conexion
-                using (var conexion = new SqlConnection(cn.getCadenaSQL()))
-                {
-                    conexion.Open();
-                    // el procedure de listar
-                    SqlCommand cmd = new SqlCommand("dbo.InsertarEmpleado", conexion);
-                    cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
-                    cmd.Parameters.AddWithValue("inSalario", oEmpleado.Salario);
-                    cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    resultado = Convert.ToInt32(cmd.ExecuteScalar()); // Lo ejecuta y retorna un valor
-                    Console.WriteLine(resultado);
-                    // Registrar el script en la página para que se ejecute en el lado del cliente
-                }
-            }
-            catch (Exception e)
-            {
-                string error = e.Message;
-                resultado = 50006;
-
-            }
-            return resultado;
+            // Utilizamos el método IsMatch para verificar si la cadena coincide con el patrón
+            return regex.IsMatch(cadena);
         }
-        */
 
-        public EmpleadoModel Obtener(string nombre)
+        public bool ContieneLetrasYEspacios(string cadena)
+        {
+            // Patrón de expresión regular para verificar si la cadena contiene solo letras y espacios en blanco
+            string patron = @"^[a-zA-Z\s]+$";
+
+            // Creamos un objeto Regex con el patrón especificado
+            Regex regex = new Regex(patron);
+
+            // Utilizamos el método IsMatch para verificar si la cadena coincide con el patrón
+            return regex.IsMatch(cadena);
+        }
+
+        public EmpleadoModel Obtener(string ValorDocumentoIdentidad)
         {
             var oEmpleado = new EmpleadoModel();
 
@@ -96,8 +99,8 @@ namespace SaldoVacaciones.Datos
                 conexion.Open();
                 // el procedure de listar
                 SqlCommand cmd = new SqlCommand("dbo.ObtenerEmpleado", conexion);
+                cmd.Parameters.AddWithValue("InValorDocumentoIdentidad", ValorDocumentoIdentidad);
                 cmd.Parameters.AddWithValue("OutResultCode", 0); // se le coloca un 0 en el outresultcode
-                cmd.Parameters.AddWithValue("inNombre", nombre);
                 cmd.CommandType = CommandType.StoredProcedure;
                 using (var dr = cmd.ExecuteReader()) // este se utiliza cuando se retorna una gran cantidad de datos, por ejemplo la tabla completa
                 {
@@ -131,7 +134,7 @@ namespace SaldoVacaciones.Datos
                     SqlCommand cmd = new SqlCommand("dbo.InsertarEmpleado", conexion);
                     cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
                     cmd.Parameters.AddWithValue("inValorDocumentoIdentidad", oEmpleado.ValorDocumentoIdentidad);
-                    cmd.Parameters.AddWithValue("inIdPuesto", oEmpleado.IdPuesto);
+                    cmd.Parameters.AddWithValue("inNombrePuesto", oEmpleado.NombrePuesto);
                     cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
@@ -164,10 +167,10 @@ namespace SaldoVacaciones.Datos
                 {
                     conexion.Open();
                     // el procedure de listar
-                    SqlCommand cmd = new SqlCommand("dbo.InsertarEmpleado", conexion);
+                    SqlCommand cmd = new SqlCommand("dbo.ModificarEmpleado", conexion);
                     cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
+                    cmd.Parameters.AddWithValue("inNombrePuesto", oEmpleado.NombrePuesto);
                     cmd.Parameters.AddWithValue("inValorDocumentoIdentidad", oEmpleado.ValorDocumentoIdentidad);
-                    cmd.Parameters.AddWithValue("inIdPuesto", oEmpleado.IdPuesto);
                     cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
@@ -187,7 +190,7 @@ namespace SaldoVacaciones.Datos
             return resultado;
 
         }
-        public bool Eliminar(EmpleadoModel oEmpleado)
+        public bool Eliminar(string ValorDocumentoIdentidad)
         {
             bool resultado;
 
@@ -200,8 +203,8 @@ namespace SaldoVacaciones.Datos
                 {
                     conexion.Open();
                     // el procedure de listar
-                    SqlCommand cmd = new SqlCommand("dbo.InsertarEmpleado", conexion);
-                    cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
+                    SqlCommand cmd = new SqlCommand("dbo.EliminarEmpleado", conexion);
+                    cmd.Parameters.AddWithValue("InValorDocumentoIdentidad", ValorDocumentoIdentidad); // se le hace un trim a la hora de insertar
                     cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

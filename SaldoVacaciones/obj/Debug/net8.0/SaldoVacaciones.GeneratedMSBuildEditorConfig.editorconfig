@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\TEC\I Semestre 2024\Bases de Datos I\Progra2\SaldoVacaciones
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/TEC/I Semestre 2024/Bases de Datos I/Progra2/SaldoVacaciones/Views/Empleado/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TEC/I Semestre 2024/Bases de Datos I/Progra2/SaldoVacaciones/Views/Empleado/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cRWxpbWluYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/TEC/I Semestre 2024/Bases de Datos I/Progra2/SaldoVacaciones/Views/Empleado/Insertar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cSW5zZXJ0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
