@@ -30,6 +30,7 @@
                         <!-- Se inserta los datos del modelo-->
                         <td>@item.Nombre</td>
                         <td>
+                            <a asp-action="Eliminar" asp-controller="Empleado" class="btn btn-info btn-sm" asp-route-ValorDocumentoIdentidad="@item.ValorDocumentoIdentidad"><i class="bi bi-eye"></i> Consultar</a>
                             <a asp-action="Editar" asp-controller="Empleado" class="btn btn-primary btn-sm" asp-route-ValorDocumentoIdentidad="@item.ValorDocumentoIdentidad"><i class="bi bi-pencil-square"></i> Editar</a>
                             <a asp-action="Eliminar" asp-controller="Empleado" class="btn btn-danger btn-sm" asp-route-ValorDocumentoIdentidad="@item.ValorDocumentoIdentidad"><i class="bi bi-trash-fill"></i> Eliminar</a>
 
