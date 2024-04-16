@@ -3,9 +3,11 @@ using SaldoVacaciones.Models;
 using SaldoVacaciones.Datos;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Net.WebSockets;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SaldoVacaciones.Controllers
 {
+    [Authorize]
     public class EmpleadoController : Controller
     {
         EmpleadoDatos _EmpleadoDatos = new EmpleadoDatos();
