@@ -6,7 +6,7 @@ namespace SaldoVacaciones.Datos
 {
     public class UsuarioDatos
     {
-        public List<UsuarioModel> Listar()
+        public List<UsuarioModel> ListarUsuario()
         {
             var oLista = new List<UsuarioModel>();
 
@@ -37,7 +37,13 @@ namespace SaldoVacaciones.Datos
             }
             return oLista;
         }
+        // Valida el usuario
+        public UsuarioModel ValidarUsuario(string username, string password)
+        {
+            return ListarUsuario().Where(item => item.Username == username && item.Password == password).FirstOrDefault();
 
+
+        }
 
     }
 }
