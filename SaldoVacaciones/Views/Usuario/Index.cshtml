@@ -1,4 +1,4 @@
-﻿
+﻿@model UsuarioModel
 @{
     Layout = null;
 }
@@ -15,14 +15,14 @@
 <body>
     <div class="row mt-5">
         <div class="col-sm-4 offset-sm-4">
-            <form>
+            <form asp-controller="Usuario" asp-action="Index" method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" asp-for="Username">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" asp-for="Password">
                 </div>
                 <button type="submit" class="btn btn-primary">Ingresar</button>
             </form>
