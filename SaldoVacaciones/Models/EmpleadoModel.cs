@@ -14,6 +14,6 @@ namespace SaldoVacaciones.Models
         public short SaldoVacaciones { get; set; }
         public bool EsActivo { get; set; }
 
-       
+   
     }
 }

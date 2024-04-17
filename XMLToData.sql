@@ -162,6 +162,9 @@ SELECT Id, Nombre, TipoAccion FROM #TempTipoMovimiento;
 INSERT INTO dbo.Error(Codigo, Descripcion)
 SELECT Codigo, Descripcion FROM #TempError;
 
+
+
+
 -- Para Movimiento
 INSERT INTO dbo.Movimiento(IdEmpleado, IdTipoMovimiento, Fecha, Monto, NuevoSaldo, IdPostByUser, PostInIp, PostTime)
 SELECT
@@ -173,10 +176,14 @@ SELECT
 	U.Id,
 	T.PostInIP,
 	T.PostTime
-FROM #TempMovimientos T 
+FROM #TempMovimientos T
 JOIN Empleado E ON T.ValorDocId = E.ValorDocumentoIdentidad
 JOIN TipoMovimiento M ON T.NombreTipoMovimiento = M.Nombre
-JOIN Usuario U ON T.PostByUser = U.Nombre;
+JOIN Usuario U ON T.PostByUser = U.Nombre
+UPDATE E
+SET E.SaldoVacaciones = E.SaldoVacaciones + M.Monto
+FROM Empleado E
+JOIN dbo.Movimiento M ON E.Id = M.IdEmpleado;
 
 
 -- Verificar en las tablas
@@ -186,6 +193,8 @@ SELECT * FROM dbo.Usuario;
 SELECT * FROM dbo.TipoEvento;
 SELECT * FROM dbo.TipoMovimiento;
 SELECT * FROM dbo.Error;
+
+SELECT * FROM dbo.Empleado;
 SELECT * FROM dbo.Movimiento;
 
 
@@ -202,15 +211,17 @@ DROP TABLE #TempMovimientos;
 
 
 -- Esto es magia negra, para borrar por si acaso
+
+DELETE FROM Dbo.Movimiento
+DBCC CHECKIDENT ('EmpleadoCRUD.dbo.Movimiento', RESEED, 0)
+
+DELETE FROM Dbo.Usuario
+
+TRUNCATE TABLE dbo.Error;
+TRUNCATE TABLE dbo.TipoEvento;
 DELETE FROM Dbo.Empleado
 DBCC CHECKIDENT ('EmpleadoCRUD.dbo.Empleado', RESEED, 0)
 
 DELETE FROM Dbo.Puesto
 DBCC CHECKIDENT ('EmpleadoCRUD.dbo.Puesto', RESEED, 0)
-
 DELETE FROM Dbo.TipoMovimiento
-DBCC CHECKIDENT ('EmpleadoCRUD.dbo.TipoMovimiento', RESEED, 0)
-
-TRUNCATE TABLE dbo.Usuario;
-TRUNCATE TABLE dbo.Error;
-TRUNCATE TABLE dbo.TipoEvento;

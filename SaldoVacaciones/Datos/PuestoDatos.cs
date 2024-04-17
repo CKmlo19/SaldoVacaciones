@@ -35,7 +35,6 @@ namespace SaldoVacaciones.Datos
                     }
                 }
             }
-            Console.WriteLine(oLista.ToArray());
             return oLista;
         }
     }

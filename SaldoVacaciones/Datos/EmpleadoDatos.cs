@@ -42,7 +42,6 @@ namespace SaldoVacaciones.Datos
                 cmd.Parameters.AddWithValue("inCedula", cedula);
                 cmd.Parameters.AddWithValue("inNombre", nombre); 
                 cmd.CommandType = CommandType.StoredProcedure;
-                int contador = 0;
                 using (var dr = cmd.ExecuteReader()) // este se utiliza cuando se retorna una gran cantidad de datos, por ejemplo la tabla completa
                 {
                     // hace una lectura del procedimiento almacenado
