@@ -14,7 +14,6 @@ namespace SaldoVacaciones.Controllers
         PuestoDatos _PuestoDatos = new PuestoDatos();
 
 
-
         public IActionResult Listar()
         {
             var oLista = _EmpleadoDatos.Listar("");

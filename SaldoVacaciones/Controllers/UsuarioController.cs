@@ -33,6 +33,9 @@ namespace SaldoVacaciones.Controllers
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity)); 
+                ActiveUser u1 = ActiveUser.GetInstance();
+                u1.SetUsername(usuario.Username);
+                u1.SetPassword(usuario.Password);
                 return RedirectToAction("Listar", "Empleado");
             }
             else {

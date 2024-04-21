@@ -1,0 +1,28 @@
+﻿@model MovimientoModel
+@{
+    ViewData["Title"] = "Insertar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Insertar Movimiento
+    </div>
+    <div class="card-body">
+
+        <form asp-action="InsertarMovimiento" asp-controller="Movimiento" method="post">
+            <div class="mb-3">
+                <label class="form-label">Monto</label>
+                <input asp-for="Monto" class="form-control">
+                <span asp-validation-for="Monto" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo Movimiento</label>
+                @Html.DropDownListFor(model => model.NombreTipoMovimiento, ViewBag.TipoMovimientos as SelectList, "Seleccionar Tipo Movimiento", new { @class = "form-control" })
+            </div>
+            <button type="submit" class="btn btn-primary btn-abrir-modal">Insertar</button>
+            <a asp-action="ListarMovimientos" asp-controller="Movimiento" class="btn btn-warning">Regresar</a>
+        </form>
+    </div>
+</div>

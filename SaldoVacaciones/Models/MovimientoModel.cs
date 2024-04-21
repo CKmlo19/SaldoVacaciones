@@ -10,7 +10,7 @@ namespace SaldoVacaciones.Models
         public DateTime Fecha { get; set; }
         public int Monto { get; set; }
         public int NuevoSaldo { get; set;}
-        public string? NombreTipoMovimieto { get; set; }
+        public string? NombreTipoMovimiento { get; set; }
         public string? NombreUsuario {  get; set; }
         public string? PostIP {  get; set; }
         public DateTime PostTime { get; set; }

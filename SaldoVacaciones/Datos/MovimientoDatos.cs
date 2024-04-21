@@ -37,7 +37,7 @@ namespace SaldoVacaciones.Datos
                             Fecha = ((DateTime)dr["Fecha"]).Date,
                             Monto = (int)Convert.ToInt64(dr["Monto"]),
                             NombreUsuario = dr["NombreUsuario"].ToString(),
-                            NombreTipoMovimieto = dr["NombreTipoMovimiento"].ToString(),
+                            NombreTipoMovimiento = dr["NombreTipoMovimiento"].ToString(),
                             PostIP = dr["PostInIp"].ToString(),
                             PostTime = (DateTime)dr["PostTime"]
                         }) ;
@@ -47,6 +47,44 @@ namespace SaldoVacaciones.Datos
 
 
             return oLista;
+        }
+        public bool Insertar(MovimientoModel oMovimiento)
+        {
+            bool resultado;
+
+            try
+            {
+                var cn = new Conexion();
+
+                // abre la conexion
+                using (var conexion = new SqlConnection(cn.getCadenaSQL()))
+                {
+                    conexion.Open();
+                    // el procedure de listar
+                    SqlCommand cmd = new SqlCommand("dbo.InsertarMovimiento", conexion);
+                    cmd.Parameters.AddWithValue("inIdEmpleado", oMovimiento.IdEmpleado); // se le hace un trim a la hora de insertar
+                    cmd.Parameters.AddWithValue("inNombreTipoMovimiento", oMovimiento.NombreTipoMovimiento);
+                    cmd.Parameters.AddWithValue("inNombreUsuario", oMovimiento.NombreUsuario);
+                    cmd.Parameters.AddWithValue("inMonto", oMovimiento.Monto);
+                    cmd.Parameters.AddWithValue("inPostIp", oMovimiento.PostIP);
+                    cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    // Registrar el script en la página para que se ejecute en el lado del cliente
+                }
+                resultado = true;
+
+
+            }
+            catch (Exception e)
+            {
+                resultado = false;
+
+            }
+
+
+            return resultado;
+
         }
 
     }
