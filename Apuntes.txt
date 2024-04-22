@@ -1,0 +1,17 @@
+nuevo usuario progra 2
+
+workstation id=EmpleadoCRUDWEB.mssql.somee.com;
+
+packet size=4096;
+
+user id=CMklo21_SQLLogin_1;
+
+pwd=nftqtgxjy1;
+
+data source=EmpleadoCRUDWEB.mssql.somee.com;
+
+persist security info=False;
+
+initial catalog=EmpleadoCRUDWEB;
+
+TrustServerCertificate=True

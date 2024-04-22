@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SaldoVacaciones")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb7c33ca358c33098726be0931d4e21169be87d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e5bd0bb28f9c9a0105efd2c37bdc884c1bbdfc5")]
 [assembly: System.Reflection.AssemblyProductAttribute("SaldoVacaciones")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SaldoVacaciones")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\models\\empleadomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\models\\empleadomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\controllers\\movimientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\controllers\\movimientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\models\\activeempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\models\\activeempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\models\\tipomovimientomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\models\\tipomovimientomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\models\\empleadomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\models\\empleadomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\views\\movimiento\\listarmovimientos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -21,18 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\views\\empleado\\insertar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\views\\empleado\\insertar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\models\\tipomovimientomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\models\\tipomovimientomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\models\\activeempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\models\\activeempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|solutionrelative:saldovacaciones\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F950DE4-29D2-4B8B-9413-B2BDDBD32900}|SaldoVacaciones\\SaldoVacaciones.csproj|d:\\tec\\i semestre 2024\\bases de datos i\\progra2\\saldovacaciones\\views\\empleado\\listar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -90,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,7 +102,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\appsettings.json",
+              "RelativeDocumentMoniker": "SaldoVacaciones\\appsettings.json",
+              "ToolTip": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\appsettings.json",
+              "RelativeToolTip": "SaldoVacaciones\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-22T05:31:53.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "UsuarioModel.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Models\\UsuarioModel.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Models\\UsuarioModel.cs",
@@ -106,11 +123,12 @@
               "RelativeToolTip": "SaldoVacaciones\\Models\\UsuarioModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:15:07.512Z"
+              "WhenOpened": "2024-04-15T23:15:07.512Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "TipoMovimientoModel.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Models\\TipoMovimientoModel.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Models\\TipoMovimientoModel.cs",
@@ -118,11 +136,12 @@
               "RelativeToolTip": "SaldoVacaciones\\Models\\TipoMovimientoModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T04:54:06.152Z"
+              "WhenOpened": "2024-04-17T04:54:06.152Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "ActiveEmpleado.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Models\\ActiveEmpleado.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Models\\ActiveEmpleado.cs",
@@ -130,36 +149,38 @@
               "RelativeToolTip": "SaldoVacaciones\\Models\\ActiveEmpleado.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAgwBcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T07:00:17.777Z"
+              "WhenOpened": "2024-04-17T07:00:17.777Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MovimientoController.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Controllers\\MovimientoController.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Controllers\\MovimientoController.cs",
               "ToolTip": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Controllers\\MovimientoController.cs",
               "RelativeToolTip": "SaldoVacaciones\\Controllers\\MovimientoController.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAABgAAABVAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwB0AAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T01:45:42.137Z"
+              "WhenOpened": "2024-04-17T01:45:42.137Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "EmpleadoModel.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Models\\EmpleadoModel.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Models\\EmpleadoModel.cs",
               "ToolTip": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Models\\EmpleadoModel.cs",
               "RelativeToolTip": "SaldoVacaciones\\Models\\EmpleadoModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAfAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T23:19:16.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Insertar.cshtml",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Views\\Empleado\\Insertar.cshtml",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Views\\Empleado\\Insertar.cshtml",
@@ -171,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ListarMovimientos.cshtml",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Views\\Movimiento\\ListarMovimientos.cshtml",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Views\\Movimiento\\ListarMovimientos.cshtml",
@@ -183,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Program.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Program.cs",
@@ -191,11 +212,12 @@
               "RelativeToolTip": "SaldoVacaciones\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T00:34:20.591Z"
+              "WhenOpened": "2024-04-16T00:34:20.591Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Listar.cshtml",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Views\\Empleado\\Listar.cshtml",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Views\\Empleado\\Listar.cshtml",
@@ -207,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "InsertarMovimiento.cshtml",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Views\\Movimiento\\InsertarMovimiento.cshtml",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Views\\Movimiento\\InsertarMovimiento.cshtml",
@@ -219,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "MovimientoDatos.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Datos\\MovimientoDatos.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Datos\\MovimientoDatos.cs",
@@ -231,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "PuestoDatos.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Datos\\PuestoDatos.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Datos\\PuestoDatos.cs",
@@ -243,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "TipoMovimientoDatos.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Datos\\TipoMovimientoDatos.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Datos\\TipoMovimientoDatos.cs",
@@ -255,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "EmpleadoController.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Controllers\\EmpleadoController.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Controllers\\EmpleadoController.cs",
@@ -267,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Controllers\\UsuarioController.cs",
@@ -279,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ActiveUser.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Models\\ActiveUser.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Models\\ActiveUser.cs",
@@ -291,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "EmpleadoDatos.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Datos\\EmpleadoDatos.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Datos\\EmpleadoDatos.cs",
@@ -303,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Views\\Usuario\\Index.cshtml",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Views\\Usuario\\Index.cshtml",
@@ -315,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Views\\Shared\\_Layout.cshtml",
@@ -327,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "PuestoModel.cs",
               "DocumentMoniker": "D:\\TEC\\I Semestre 2024\\Bases de Datos I\\Progra2\\SaldoVacaciones\\Models\\PuestoModel.cs",
               "RelativeDocumentMoniker": "SaldoVacaciones\\Models\\PuestoModel.cs",
