@@ -38,11 +38,53 @@ namespace SaldoVacaciones.Datos
             return oLista;
         }
         // Valida el usuario
-        public UsuarioModel ValidarUsuario(string username, string password)
+        public int ValidarUsuario(string username, string password)
         {
+            int resultado;
+
+            try
+            {
+                var cn = new Conexion();
+
+                // abre la conexion
+                using (var conexion = new SqlConnection(cn.getCadenaSQL()))
+                {
+                    conexion.Open();
+                    // el procedure de listar
+                    SqlCommand cmd = new SqlCommand("dbo.ValidarUsuario", conexion);
+                    cmd.Parameters.AddWithValue("inNombre", username);
+                    cmd.Parameters.AddWithValue("inPassword", password); // se le hace un trim a la hora de insertar
+                    cmd.Parameters.AddWithValue("OutResultCode", 0).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.ExecuteNonQuery();
+
+                    resultado = Convert.ToInt32(cmd.Parameters["OutResultCode"].Value);
+                    // Registrar el script en la página para que se ejecute en el lado del cliente
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                resultado = 50008;
+
+            }
+
+
+            return resultado;
+
+
+
+
+
+
+          //  return ListarUsuario().Where(item => item.Username == username && item.Password == password).FirstOrDefault();
+
+
+        }
+        public UsuarioModel RetornarUsuario(string username, string password) {
             return ListarUsuario().Where(item => item.Username == username && item.Password == password).FirstOrDefault();
-
-
         }
 
     }

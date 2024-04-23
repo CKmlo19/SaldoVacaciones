@@ -15,6 +15,10 @@
 <body>
     <div class="row mt-5">
         <div class="col-sm-4 offset-sm-4">
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+            }
             <form asp-controller="Usuario" asp-action="Index" method="post">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Usuario</label>
