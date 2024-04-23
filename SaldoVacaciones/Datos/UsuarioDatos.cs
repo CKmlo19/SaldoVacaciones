@@ -49,6 +49,13 @@ namespace SaldoVacaciones.Datos
                 // abre la conexion
                 using (var conexion = new SqlConnection(cn.getCadenaSQL()))
                 {
+                    if (username == null) {
+                        return resultado = 50001;
+                    }
+                    else if (password == null)
+                    {
+                        return resultado = 50002;
+                    }
                     conexion.Open();
                     // el procedure de listar
                     SqlCommand cmd = new SqlCommand("dbo.ValidarUsuario", conexion);
