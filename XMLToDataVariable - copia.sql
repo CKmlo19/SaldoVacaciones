@@ -1,4 +1,4 @@
-USE EmpleadoCRUDWEB; -- Nombre de la base de datos
+USE EmpleadoCRUD; -- Nombre de la base de datos
 DECLARE @XMLDoc XML;
 
 -- Lee el archivo XML y lo almacena en la variable @XMLDoc
@@ -117,17 +117,6 @@ SELECT
 	Employee.value('@PostTime', 'DATETIME')
 FROM @XMLDoc.nodes('/Datos/Movimientos/movimiento') AS XTbl(Employee);
 
--- Consulta los datos insertados en la tabla temporal
-SELECT * FROM @TempEmpleados;
-SELECT * FROM @TempPuesto;
-SELECT * FROM @TempUsuario;
-SELECT * FROM @TempTipoEvento;
-SELECT * FROM @TempTipoMovimiento;
-SELECT * FROM @TempError;
-SELECT * FROM @TempMovimientos;
-
-
-
 -- Inserta los datos en la tabla Empleados mapeando los nombres de los puestos a los IDs correspondientes
 
 -- para Puesto
@@ -192,13 +181,4 @@ SET E.SaldoVacaciones = E.SaldoVacaciones + ISNULL(
 )
 FROM dbo.Empleado E;
 
-
--- Verificar en las tablas
-SELECT * FROM dbo.Empleado;
-SELECT * FROM dbo.Puesto;
-SELECT * FROM dbo.Usuario;
-SELECT * FROM dbo.TipoEvento;
-SELECT * FROM dbo.TipoMovimiento;
-SELECT * FROM dbo.Error;
-SELECT * FROM dbo.Movimiento;
 

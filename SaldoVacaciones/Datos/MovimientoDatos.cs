@@ -27,7 +27,6 @@ namespace SaldoVacaciones.Datos
                     // hace una lectura del procedimiento almacenado
                     while (dr.Read())
                     {
-                        DateTime soloFecha;
                         oLista.Add(new MovimientoModel()
                         {
                             // tecnicamente hace un select, es por eso que se lee cada registro uno a uno que ya esta ordenado
@@ -36,6 +35,7 @@ namespace SaldoVacaciones.Datos
                             IdTipoMovimiento = (int)Convert.ToInt64(dr["IdTipoMovimiento"]),
                             Fecha = ((DateTime)dr["Fecha"]).Date,
                             Monto = (int)Convert.ToInt64(dr["Monto"]),
+                            NuevoSaldo = (int)Convert.ToInt64(dr["NuevoSaldo"]),
                             NombreUsuario = dr["NombreUsuario"].ToString(),
                             NombreTipoMovimiento = dr["NombreTipoMovimiento"].ToString(),
                             PostIP = dr["PostInIp"].ToString(),
@@ -43,6 +43,7 @@ namespace SaldoVacaciones.Datos
                         }) ;
                     }
                 }
+                conexion.Close();
             }
 
 
@@ -60,17 +61,18 @@ namespace SaldoVacaciones.Datos
                 using (var conexion = new SqlConnection(cn.getCadenaSQL()))
                 {
                     conexion.Open();
-                    // el procedure de listar
-                    SqlCommand cmd = new SqlCommand("dbo.InsertarMovimiento", conexion);
-                    cmd.Parameters.AddWithValue("inIdEmpleado", oMovimiento.IdEmpleado); // se le hace un trim a la hora de insertar
-                    cmd.Parameters.AddWithValue("inNombreTipoMovimiento", oMovimiento.NombreTipoMovimiento);
-                    cmd.Parameters.AddWithValue("inNombreUsuario", oMovimiento.NombreUsuario);
-                    cmd.Parameters.AddWithValue("inMonto", oMovimiento.Monto);
-                    cmd.Parameters.AddWithValue("inPostIp", oMovimiento.PostIP);
-                    cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.ExecuteNonQuery();
-                    // Registrar el script en la página para que se ejecute en el lado del cliente
+                    SqlCommand cmd1 = new SqlCommand("dbo.InsertarMovimiento", conexion);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+
+
+                    cmd1.Parameters.AddWithValue("@InIdEmpleado", oMovimiento.IdEmpleado);
+                    cmd1.Parameters.AddWithValue("@InNombreTipoMovimiento", oMovimiento.NombreTipoMovimiento);
+                    cmd1.Parameters.AddWithValue("@InNombreUsuario", oMovimiento.NombreUsuario);
+                    cmd1.Parameters.AddWithValue("@InMonto", oMovimiento.Monto);
+                    cmd1.Parameters.AddWithValue("@InFecha", (DateTime.Today).ToString("yyyy-MM-dd"));
+                    cmd1.Parameters.AddWithValue("@InPostIp", oMovimiento.PostIP);
+                    cmd1.Parameters.Add("@OutResultCode", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd1.ExecuteNonQuery();
                 }
                 resultado = true;
 
@@ -79,7 +81,7 @@ namespace SaldoVacaciones.Datos
             catch (Exception e)
             {
                 resultado = false;
-
+                Console.WriteLine("Error: " + e.Message);
             }
 
 

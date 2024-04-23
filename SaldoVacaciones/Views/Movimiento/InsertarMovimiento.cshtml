@@ -19,10 +19,14 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Tipo Movimiento</label>
-                @Html.DropDownListFor(model => model.NombreTipoMovimiento, ViewBag.TipoMovimientos as SelectList, "Seleccionar Tipo Movimiento", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.NombreTipoMovimiento, ViewBag.TipoMovimientos as SelectList, new { @class = "form-control" })
             </div>
             <button type="submit" class="btn btn-primary btn-abrir-modal">Insertar</button>
-            <a asp-action="ListarMovimientos" asp-controller="Movimiento" class="btn btn-warning">Regresar</a>
+            @{
+                ActiveEmpleado e1 = ActiveEmpleado.GetInstance();
+
+            }
+            <a asp-action="ListarMovimientos" asp-controller="Movimiento" class="btn btn-warning" asp-route-ValorDocumentoIdentidad="@e1.GetEmpleado().ValorDocumentoIdentidad">Regresar</a>
         </form>
     </div>
 </div>

@@ -223,7 +223,7 @@ DBCC CHECKIDENT ('EmpleadoCRUD.dbo.Movimiento', RESEED, 0)
 DELETE FROM Dbo.Usuario
 
 TRUNCATE TABLE dbo.Error;
-TRUNCATE TABLE dbo.TipoEvento;
+DELETE FROM dbo.TipoEvento;
 DELETE FROM Dbo.Empleado
 DBCC CHECKIDENT ('EmpleadoCRUD.dbo.Empleado', RESEED, 0)
 

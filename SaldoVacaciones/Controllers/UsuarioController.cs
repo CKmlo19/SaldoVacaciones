@@ -36,6 +36,7 @@ namespace SaldoVacaciones.Controllers
                 ActiveUser u1 = ActiveUser.GetInstance();
                 u1.SetUsername(usuario.Username);
                 u1.SetPassword(usuario.Password);
+                u1.SetIP(HttpContext.Connection.RemoteIpAddress.ToString());
                 return RedirectToAction("Listar", "Empleado");
             }
             else {

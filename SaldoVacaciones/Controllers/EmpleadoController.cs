@@ -42,6 +42,13 @@ namespace SaldoVacaciones.Controllers
         {
             if (!ModelState.IsValid)
             {
+                var oLista = _PuestoDatos.ListarPuesto();
+                List<string> puestos = new List<string>();
+                for (int i = 0; i < oLista.Count; i++)
+                {
+                    puestos.Add(oLista[i].Nombre);
+                }
+                ViewBag.Puestos = new SelectList(puestos);
                 return View();
             }
             var resultado = _EmpleadoDatos.Editar(oEmpleado);
@@ -51,6 +58,13 @@ namespace SaldoVacaciones.Controllers
             }
             else
             {
+                var oLista = _PuestoDatos.ListarPuesto();
+                List<string> puestos = new List<string>();
+                for (int i = 0; i < oLista.Count; i++)
+                {
+                    puestos.Add(oLista[i].Nombre);
+                }
+                ViewBag.Puestos = new SelectList(puestos);
                 return View(); // sino se queda en el mismo formulario
 
             }
@@ -72,7 +86,14 @@ namespace SaldoVacaciones.Controllers
         public IActionResult Insertar(EmpleadoModel oEmpleado)
         { //
 
-            if (!ModelState.IsValid) { 
+            if (!ModelState.IsValid) {
+                var oLista = _PuestoDatos.ListarPuesto();
+                List<string> puestos = new List<string>();
+                for (int i = 0; i < oLista.Count; i++)
+                {
+                    puestos.Add(oLista[i].Nombre);
+                }
+                ViewBag.Puestos = new SelectList(puestos);
                 return View();
             }
             var resultado = _EmpleadoDatos.Insertar(oEmpleado);
@@ -81,6 +102,13 @@ namespace SaldoVacaciones.Controllers
                 return RedirectToAction("Listar");
             }
             else {
+                var oLista = _PuestoDatos.ListarPuesto();
+                List<string> puestos = new List<string>();
+                for (int i = 0; i < oLista.Count; i++)
+                {
+                    puestos.Add(oLista[i].Nombre);
+                }
+                ViewBag.Puestos = new SelectList(puestos);
                 return View(); // sino se queda en el mismo formulario
 
             }

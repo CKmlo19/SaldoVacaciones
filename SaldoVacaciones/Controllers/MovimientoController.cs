@@ -13,16 +13,16 @@ namespace SaldoVacaciones.Controllers
         EmpleadoDatos _empleadoDatos = new EmpleadoDatos();
         TipoMovimientoDatos _tipoMovimientoDatos = new TipoMovimientoDatos();
 
-        public IActionResult ListarMovimientos(EmpleadoModel Empleado)
+        public IActionResult ListarMovimientos(string ValorDocumentoIdentidad)
         {
+            var empleado = _empleadoDatos.Obtener(ValorDocumentoIdentidad);
             ActiveEmpleado e1 = ActiveEmpleado.GetInstance();
-            e1.SetEmpleado(Empleado);
-            var oLista = _movimientoDatos.Listar(Empleado.Id);
+            e1.SetEmpleado(empleado);
+            var oLista = _movimientoDatos.Listar(empleado.Id);
             return View(oLista);
         }
         public IActionResult InsertarMovimiento(int idEmpleado)
         {
-            var oListaEmpleados = _empleadoDatos.Listar("3");  // codigo 3 para listar todos los empleados
             var oListaTipoMovimiento = _tipoMovimientoDatos.ListarTipoMovimiento();
             List<string> tipoMovimientos = new List<string>();
             for (int i = 0; i < oListaTipoMovimiento.Count; i++)
@@ -37,12 +37,14 @@ namespace SaldoVacaciones.Controllers
         {
             string ipAddress = HttpContext.Connection.RemoteIpAddress.ToString();
             ActiveUser u1 = ActiveUser.GetInstance();
+            ActiveEmpleado e1 = ActiveEmpleado.GetInstance();
             oMovimiento.NombreUsuario = u1.GetUsername();
             oMovimiento.PostIP = ipAddress;
+            oMovimiento.IdEmpleado = e1.GetEmpleado().Id;
             var respuesta = _movimientoDatos.Insertar(oMovimiento);
             
             if (respuesta)
-                return RedirectToAction("ListarMovimientos", "Movimiento");
+                return RedirectToAction("ListarMovimientos", "Movimiento", new { ValorDocumentoIdentidad = e1.GetEmpleado().ValorDocumentoIdentidad });
             else
                 return View();
             

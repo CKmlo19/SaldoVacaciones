@@ -112,7 +112,7 @@ namespace SaldoVacaciones.Datos
                     while (dr.Read())
                     {
                         oEmpleado.Id = (int)Convert.ToInt64(dr["Id"]);
-                        oEmpleado.IdPuesto = (int)Convert.ToInt64(dr["Id"]);
+                        oEmpleado.IdPuesto = (int)Convert.ToInt64(dr["IdPuesto"]);
                         oEmpleado.ValorDocumentoIdentidad = dr["ValorDocumentoIdentidad"].ToString();
                         oEmpleado.Nombre = dr["Nombre"].ToString();
                         oEmpleado.FechaContratacion = (DateTime)dr["FechaContratacion"];
@@ -135,6 +135,7 @@ namespace SaldoVacaciones.Datos
                 {
                     conexion.Open();
                     // el procedure de listar
+                    ActiveUser u1 = ActiveUser.GetInstance();
                     SqlCommand cmd = new SqlCommand("dbo.InsertarEmpleado", conexion);
                     cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
                     cmd.Parameters.AddWithValue("inValorDocumentoIdentidad", oEmpleado.ValorDocumentoIdentidad);

@@ -9,6 +9,18 @@
     <div class="card-body">
         <table class="table table-bordered" bgcolor="white" width="700">
             <thead>
+                <h3>
+                    @{ ActiveEmpleado e1 = ActiveEmpleado.GetInstance();
+          
+                    }
+                    <p>
+                        Cedula: @e1.GetEmpleado().ValorDocumentoIdentidad &nbsp; &nbsp;&nbsp;
+                        Nombre: @e1.GetEmpleado().Nombre &nbsp;&nbsp;&nbsp;
+                       Saldo: @e1.GetEmpleado().SaldoVacaciones
+                    <p/>
+
+
+                </h3>
                 <tr bgcolor="grey">
                     <th>Fecha</th>
                     <th>Tipo Movimiento</th>

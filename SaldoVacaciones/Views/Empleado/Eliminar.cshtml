@@ -13,7 +13,7 @@
             <input asp-for="ValorDocumentoIdentidad" type="hidden" class="form-control">
 
             <div class="alert alert-danger" role="alert">
-                ¿Desea eliminar el empleado: @Html.DisplayTextFor(m => m.ValorDocumentoIdentidad)?
+                ¿Desea eliminar el empleado:  @Model.Nombre          @Html.DisplayTextFor(m => m.ValorDocumentoIdentidad)?
             </div>
 
             <button type="submit" class="btn btn-danger btn-abrir-modal">Eliminar</button>

@@ -24,7 +24,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Puesto</label>
-                @Html.DropDownListFor(model => model.NombrePuesto, ViewBag.Puestos as SelectList, "Seleccionar Puesto", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.NombrePuesto, ViewBag.Puestos as SelectList, new { @class = "form-control" })
             </div>
             <button type="submit" class="btn btn-primary btn-abrir-modal">Insertar</button>
             <a asp-action="Listar" asp-controller="Empleado" class="btn btn-warning">Regresar</a>
