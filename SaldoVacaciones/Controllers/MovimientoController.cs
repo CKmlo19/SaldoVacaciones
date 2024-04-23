@@ -44,6 +44,8 @@ namespace SaldoVacaciones.Controllers
                     tipoMovimientos.Add(oListaTipoMovimiento[i].Nombre);
                 }
                 ViewBag.TipoMovimientos = new SelectList(tipoMovimientos);
+                TempData["ErrorMessage"] = "¡Ha ocurrido un error!";
+
                 return View();
             }
 

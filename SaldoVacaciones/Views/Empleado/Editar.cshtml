@@ -9,6 +9,10 @@
         Editar Empleado
     </div>
     <div class="card-body">
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+        }
 
         <form asp-action="Editar" asp-controller="Empleado" method="post">
             <input asp-for="Id" type="hidden" class="form-control">

@@ -12,6 +12,7 @@ namespace SaldoVacaciones.Controllers
     {
         EmpleadoDatos _EmpleadoDatos = new EmpleadoDatos();
         PuestoDatos _PuestoDatos = new PuestoDatos();
+        ErrorDatos _ErrorDatos = new ErrorDatos();
 
 
         public IActionResult Listar()
@@ -52,7 +53,7 @@ namespace SaldoVacaciones.Controllers
                 return View();
             }
             var resultado = _EmpleadoDatos.Editar(oEmpleado);
-            if (resultado)
+            if (resultado == 0)
             {
                 return RedirectToAction("Listar");
             }
@@ -65,6 +66,9 @@ namespace SaldoVacaciones.Controllers
                     puestos.Add(oLista[i].Nombre);
                 }
                 ViewBag.Puestos = new SelectList(puestos);
+                var oError = _ErrorDatos.ObtenerError(resultado);
+
+                TempData["ErrorMessage"] = "Error: " + oError.Codigo + " Descripcion: " + oError.Descripcion;
                 return View(); // sino se queda en el mismo formulario
 
             }
@@ -97,7 +101,7 @@ namespace SaldoVacaciones.Controllers
                 return View();
             }
             var resultado = _EmpleadoDatos.Insertar(oEmpleado);
-            if (resultado)
+            if (resultado == 0)
             {
                 return RedirectToAction("Listar");
             }
@@ -109,6 +113,9 @@ namespace SaldoVacaciones.Controllers
                     puestos.Add(oLista[i].Nombre);
                 }
                 ViewBag.Puestos = new SelectList(puestos);
+                var oError = _ErrorDatos.ObtenerError(resultado);
+                
+                TempData["ErrorMessage"] = "Error: " + oError.Codigo + " Descripcion: " + oError.Descripcion;
                 return View(); // sino se queda en el mismo formulario
 
             }

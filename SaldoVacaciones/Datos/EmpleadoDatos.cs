@@ -123,8 +123,8 @@ namespace SaldoVacaciones.Datos
             }
             return oEmpleado;
         }
-        public bool Insertar(EmpleadoModel oEmpleado) {
-            bool resultado;
+        public int Insertar(EmpleadoModel oEmpleado) {
+            int resultado;
 
             try
             {
@@ -137,20 +137,23 @@ namespace SaldoVacaciones.Datos
                     // el procedure de listar
                     ActiveUser u1 = ActiveUser.GetInstance();
                     SqlCommand cmd = new SqlCommand("dbo.InsertarEmpleado", conexion);
-                    cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
-                    cmd.Parameters.AddWithValue("inValorDocumentoIdentidad", oEmpleado.ValorDocumentoIdentidad);
-                    cmd.Parameters.AddWithValue("inNombrePuesto", oEmpleado.NombrePuesto);
-                    cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
+                    cmd.Parameters.AddWithValue("InNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
+                    cmd.Parameters.AddWithValue("InValorDocumentoIdentidad", oEmpleado.ValorDocumentoIdentidad);
+                    cmd.Parameters.AddWithValue("InNombrePuesto", oEmpleado.NombrePuesto);
+                    cmd.Parameters.AddWithValue("OutResultCode", 0).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.ExecuteNonQuery();
+
+                    // Obtiene el valor del parámetro de salida
+                    resultado = Convert.ToInt32(cmd.Parameters["OutResultCode"].Value);
                     // Registrar el script en la página para que se ejecute en el lado del cliente
                 }
-                resultado = true;
 
 
             }
             catch(Exception e) {
-                resultado = false;
+                resultado = 50008;
 
             }
 
@@ -159,9 +162,9 @@ namespace SaldoVacaciones.Datos
         
         }
 
-        public bool Editar(EmpleadoModel oEmpleado)
+        public int Editar(EmpleadoModel oEmpleado)
         {
-            bool resultado;
+            int resultado;
 
             try
             {
@@ -177,18 +180,20 @@ namespace SaldoVacaciones.Datos
                     cmd.Parameters.AddWithValue("inNombre", oEmpleado.Nombre.Trim()); // se le hace un trim a la hora de insertar
                     cmd.Parameters.AddWithValue("inNombrePuesto", oEmpleado.NombrePuesto);
                     cmd.Parameters.AddWithValue("inValorDocumentoIdentidad", oEmpleado.ValorDocumentoIdentidad);
-                    cmd.Parameters.AddWithValue("OutResultCode", 0); // en un inicio se coloca en 0
+                    cmd.Parameters.AddWithValue("OutResultCode", 0).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
+                    
                     cmd.ExecuteNonQuery();
+
+                    resultado = Convert.ToInt32(cmd.Parameters["OutResultCode"].Value);
                     // Registrar el script en la página para que se ejecute en el lado del cliente
                 }
-                resultado = true;
 
 
             }
             catch (Exception e)
             {
-                resultado = false;
+                resultado = 50008;
 
             }
 
