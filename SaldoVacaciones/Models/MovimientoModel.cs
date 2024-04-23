@@ -8,6 +8,7 @@ namespace SaldoVacaciones.Models
         public int IdEmpleado { get; set; }
         public int IdTipoMovimiento { get; set; }
         public DateTime Fecha { get; set; }
+        [Range(0, int.MaxValue, ErrorMessage = "El monto debe ser un valor positivo.")]
         public int Monto { get; set; }
         public int NuevoSaldo { get; set;}
         public string? NombreTipoMovimiento { get; set; }

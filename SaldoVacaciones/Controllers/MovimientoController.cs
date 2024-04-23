@@ -35,6 +35,19 @@ namespace SaldoVacaciones.Controllers
         [HttpPost]
         public IActionResult InsertarMovimiento(MovimientoModel oMovimiento)
         {
+            if (!ModelState.IsValid)
+            {
+                var oListaTipoMovimiento = _tipoMovimientoDatos.ListarTipoMovimiento();
+                List<string> tipoMovimientos = new List<string>();
+                for (int i = 0; i < oListaTipoMovimiento.Count; i++)
+                {
+                    tipoMovimientos.Add(oListaTipoMovimiento[i].Nombre);
+                }
+                ViewBag.TipoMovimientos = new SelectList(tipoMovimientos);
+                return View();
+            }
+
+
             string ipAddress = HttpContext.Connection.RemoteIpAddress.ToString();
             ActiveUser u1 = ActiveUser.GetInstance();
             ActiveEmpleado e1 = ActiveEmpleado.GetInstance();
@@ -42,12 +55,21 @@ namespace SaldoVacaciones.Controllers
             oMovimiento.PostIP = ipAddress;
             oMovimiento.IdEmpleado = e1.GetEmpleado().Id;
             var respuesta = _movimientoDatos.Insertar(oMovimiento);
-            
+
+
+
             if (respuesta)
                 return RedirectToAction("ListarMovimientos", "Movimiento", new { ValorDocumentoIdentidad = e1.GetEmpleado().ValorDocumentoIdentidad });
-            else
+            else {
+                var oListaTipoMovimiento = _tipoMovimientoDatos.ListarTipoMovimiento();
+                List<string> tipoMovimientos = new List<string>();
+                for (int i = 0; i < oListaTipoMovimiento.Count; i++)
+                {
+                    tipoMovimientos.Add(oListaTipoMovimiento[i].Nombre);
+                }
+                ViewBag.TipoMovimientos = new SelectList(tipoMovimientos);
                 return View();
-            
+            }
         }
     }
 
